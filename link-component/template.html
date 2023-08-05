@@ -1,0 +1,1 @@
+<div :id="link.id" class="link" :class="`color-${ link.colorId }`" @click="candidate ? commitCandidate() : removeChainLink(link.id)" :style="`grid-area: ${link.block.y+1}/${link.block.x+1}/${blockYEnd(link.block)+1}/${blockXEnd(link.block)+1}`"></div>

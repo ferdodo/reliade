@@ -1,0 +1,61 @@
+body {
+	background-color: lightcoral;
+}
+
+div {
+	user-select: none;
+}
+
+.connector {
+	border-radius:5px;
+	border:1mm solid white;
+	cursor:pointer;
+}
+
+.color-1 {
+	background-color:#3edde3;
+}
+
+.color-2 {
+	background-color:#e33e8b;
+}
+
+.color-3 {
+	background-color:#e3963e;
+}
+
+.color-4 {
+	background-color:#dde33e;
+}
+
+.color-5 {
+	background-color:#3ee344;
+}
+
+.connectorIsSelected {
+	border: 1mm solid purple;
+}
+
+.target {
+	border-radius:5px;
+	border:1mm solid black;
+}
+
+.link {
+	border: 1mm solid #F08080;
+	border-radius: 50%;
+	animation: .5s cubic-bezier(.02,1.14,.58,1) splatter;
+}
+
+@keyframes splatter {
+	0% {
+		border-width: 6mm;
+	}
+	100% {
+		border-width: 1mm;
+	}
+}
+
+.playground {
+	background: #F08080;
+}

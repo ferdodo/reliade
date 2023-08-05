@@ -1,0 +1,6 @@
+<div
+    class="connector"
+    :class="{ connectorIsSelected, [`color-${ connector.colorId }`]: true }"
+    @click="selectConnector(connector.id)"
+    :style="`grid-area: ${connector.block.y+1}/${connector.block.x+1}/${blockYEnd(connector.block)+1}/${blockXEnd(connector.block)+1}`">
+</div>
