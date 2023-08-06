@@ -1,1 +1,1 @@
-<div class="target" :class="`color-${ target.colorId }`" :style="`grid-area: ${target.block.y+1}/${target.block.x+1}/${blockYEnd(target.block)+1}/${blockXEnd(target.block)+1}`"></div>
+<div class="target" :class="`color-${ target.colorId }`" @click="commitCandidate" :style="`grid-area: ${target.block.y+1}/${target.block.x+1}/${blockYEnd(target.block)+1}/${blockXEnd(target.block)+1}`"></div>
