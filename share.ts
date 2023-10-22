@@ -1,4 +1,8 @@
+import { puzzleFilling$ } from "./puzzle-filling";
 
+let puzzleFilling = 0;
+
+puzzleFilling$.subscribe(value => puzzleFilling = value);
 
 export function share() {
     const date = new Date();
@@ -8,7 +12,7 @@ export function share() {
     const formattedDate = `${year}/${month}/${day}`;
     let text = `Reliade ${formattedDate}`;
 
-    text += `\n\nPuzzle réussi.`
+    text += `\n\nPuzzle réussi avec ${ puzzleFilling }% de remplissage.`
 
     text += `\n\nhttps://ferdodo.github.io/reliade`;
     navigator.clipboard.writeText(text);
