@@ -13,7 +13,8 @@ export function isCandidateLegal(puzzle: Puzzle): boolean {
         !isConnectorAdjacentToFirstLink(puzzle) ||
         !isCandidateLinksChainingEachOther(puzzle) ||
         !isCandidateLinksAdjacent(puzzle) ||
-        !isCandidateLinkNotCollidingPuzzleBlocks(puzzle)
+        !isCandidateLinkNotCollidingPuzzleBlocks(puzzle) ||
+        !isCandicateLinkNotCollindingOtherCandidatesLink(puzzle)
     ) {
         return false;
     }
@@ -136,4 +137,17 @@ function isCandidateLinkNotCollidingPuzzleBlocks(puzzle: Puzzle): boolean {
     }
 
     return true;
+}
+
+
+function isCandicateLinkNotCollindingOtherCandidatesLink(puzzle: Puzzle): boolean {
+    const candidate: Candidate | null = puzzle.candidate;
+
+    if (!candidate) {
+        return false;
+    }
+
+	const linksCoordinatesAlias = candidate.links.map(link => `${link.block.x}-${link.block.y}`);
+	const candidateLinkCoordinates: Set<string> = new Set(linksCoordinatesAlias);
+	return candidateLinkCoordinates.size === candidate.links.length;
 }
